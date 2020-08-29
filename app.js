@@ -5,8 +5,7 @@ let express = require("express"),
     User = require("./models/user.js"),
     app = express();
 
-let port = 3000 || process.env.PORT;
-//mongoose.connect("mongodb+srv://ml4e:Gtfe17iWyy0s7dEz@cluster0.vgezg.mongodb.net/ml4edb?retryWrites=true&w=majority", { useFindAndModify: false, useNewUrlParser: true, useUnifiedTopology: true})
+let port = process.env.PORT;
 mongoose.connect('mongodb+srv://Saswat:Password1234@cluster0.6jh4b.mongodb.net/opencode_test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.set("view engine", "ejs")
 app.use(express.static("public"))
@@ -66,22 +65,6 @@ app.post("/home", (req, res) => {
         }
     })
 })
-
-// app.post("/home", (req, res) => {
-//     let name = req.body.name;
-//     let rollno = req.body.rollno;
-//     rollno = rollno.toUpperCase();
-//     console.log(rollno)
-//     let newUser = {name: name, rollno: rollno}
-//     User.create(newUser, (err) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             req.flash("success", "Added entry")
-//             res.redirect("/home");
-//         }
-//     })
-// })
 
 app.get("/index", (req, res) => {
     User.find({}).sort({rollno: 1}).exec((err, users) =>{
