@@ -7,7 +7,7 @@ let express = require("express"),
 
 let port = 3000 || process.env.PORT;
 //mongoose.connect("mongodb+srv://ml4e:Gtfe17iWyy0s7dEz@cluster0.vgezg.mongodb.net/ml4edb?retryWrites=true&w=majority", { useFindAndModify: false, useNewUrlParser: true, useUnifiedTopology: true})
-mongoose.connect('mongodb://localhost:27017/ml4e_test', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect('mongodb+srv://Saswat:Password1234@cluster0.6jh4b.mongodb.net/opencode_test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}))
