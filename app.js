@@ -5,7 +5,7 @@ let express = require("express"),
     User = require("./models/user.js"),
     app = express();
 
-let port = process.env.PORT;
+let port = process.env.PORT || 3000;
 mongoose.connect('mongodb+srv://Saswat:Password1234@cluster0.6jh4b.mongodb.net/opencode_test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.set("view engine", "ejs")
 app.use(express.static("public"))
