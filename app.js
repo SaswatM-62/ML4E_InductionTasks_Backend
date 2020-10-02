@@ -6,7 +6,7 @@ let express = require("express"),
     app = express();
 
 let port = process.env.PORT || 3000;
-mongoose.connect('mongodb+srv://Saswat:Password1234@cluster0.6jh4b.mongodb.net/opencode_test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect('mongodb+srv://<Username>:<Password>@cluster0.6jh4b.mongodb.net/<Db>?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}))
